@@ -21,13 +21,14 @@ class Attaque:
 
 
 class Pokemon:
-    def __init__(self, nom, type_, pv_max, attaque, defense, special, attaques=None):
+    def __init__(self, nom, type_, pv_max, attaque, defense, special, vitesse, attaques=None):
         self.nom = nom
         self.type = type_
         self.pv_max = pv_max
         self.pv = pv_max
         self.attaque = attaque
         self.defense = defense
+        self.vitesse = vitesse
         self.special = special
         self.attaques = attaques if attaques else []
 
@@ -57,9 +58,9 @@ fouet_lianes = Attaque("Fouet Lianes", "Plante", 45, "physique")
 
 # === Définition de Pokémon ===
 
-pikachu = Pokemon("Pikachu", "Électrique", 100, 55, 30, 50, attaques=[eclair, charge])
-carapuce = Pokemon("Carapuce", "Eau", 120, 45, 40, 50, attaques=[pistolet_eau, tacle])
-bulbizarre = Pokemon("Bulbizarre", "Plante", 110, 48, 42, 60, attaques=[fouet_lianes, charge])
+pikachu = Pokemon("Pikachu", "Électrique", 100, 55, 30, 50, 130,attaques=[eclair, charge])
+carapuce = Pokemon("Carapuce", "Eau", 120, 45, 40, 50, 120, attaques=[pistolet_eau, tacle])
+bulbizarre = Pokemon("Bulbizarre", "Plante", 110, 48, 42, 60, 110, attaques=[fouet_lianes, charge])
 
 # === Dictionnaire de référence ===
 
