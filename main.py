@@ -1,6 +1,7 @@
 from pokemon import Pokemon
 from dresseur import Dresseur
 from combat import tour_combat
+from PKMtypes import get_multiplicateur
 import time
 
 # Initialisation des Pokémon

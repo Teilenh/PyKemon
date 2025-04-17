@@ -1,4 +1,4 @@
-from types import get_multiplicateur
+from PKMtypes import get_multiplicateur
 
 def calcul_degats(pokemon_atk, pokemon_def):
     mult = get_multiplicateur(pokemon_atk.type, pokemon_def.type)
