@@ -14,7 +14,7 @@ def calcul_degats(attacker, defender, attaque):
         raise ValueError("Catégorie d'attaque inconnue")
     multiplicateur_type = get_multiplicateur(attaque.type, defender.type)
 
-    # Formule des dégâts (génération 1 simplifiée)
+    # calcul dégat pkm
     degats = (((2 * niveau + 10) / 250) * (stat_attaquant / stat_defenseur) * attaque.puissance + 2) * multiplicateur_type
     return max(1, int(degats))
 
