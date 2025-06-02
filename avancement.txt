@@ -1,4 +1,4 @@
-=== PyKemon - Journal d'avancement ===
+=== PyKemon - avancement ===
 
 1. PROBLÈMES RENCONTRÉS ET SOLUTIONS
 -----------------------------------
@@ -80,15 +80,8 @@ c) Contenu
 a) Performance
    - Mise en cache intelligente
    - Chargement asynchrone des ressources
-   - Optimisation des animations
 
-b) Code
-   - Tests unitaires complets
-   - Documentation détaillée
-   - Logging pour debug
-   - Gestion des erreurs améliorée
-
-c) Architecture
+b) Architecture
    - Pattern MVC strict
    - Système de plugins
    - Configuration externalisée
@@ -109,19 +102,9 @@ b) Social
    - Replay de combats
    - Création de tournois
 
-c) Technique
-   - Base de données SQLite
-   - Sauvegarde cloud
-   - Mises à jour automatiques
-   - Mode hors-ligne complet
-
 6. NOTES DE DÉVELOPPEMENT
 ------------------------
-
-- Priorité à la stabilité du core
-- Interface utilisateur intuitive
 - Respect des mécaniques de la 1ère génération
-- Code modulaire et extensible
 - Documentation en français
 - Tests réguliers des fonctionnalités
 A faire :   - Ajout des attaques status (Poudre Dodo, etc.) mais encore non fonctionnelle
