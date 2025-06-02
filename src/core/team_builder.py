@@ -112,26 +112,26 @@ class TeamBuilder:
         self.equipe = []  # Réinitialiser l'équipe
         
         try:
-        with open(self.fichier_equipe, 'r') as f:
-            reader = csv.reader(f)
-            next(reader)  # Ignorer l'en-tête
+            with open(self.fichier_equipe, 'r') as f:
+                reader = csv.reader(f)
+                next(reader)  # Ignorer l'en-tête
+                
+                for row in reader:
+                    if len(row) >= 5:  # Pokemon + 4 attaques
+                        nom_pokemon = row[0]
+                        attaques = [a for a in row[1:5] if a]  # Ignorer les attaques vides
+                        
+                        success, message = self.ajouter_pokemon(nom_pokemon)
+                        if success:
+                            self.configurer_attaques(len(self.equipe) - 1, attaques)
             
-            for row in reader:
-                if len(row) >= 5:  # Pokemon + 4 attaques
-                    nom_pokemon = row[0]
-                    attaques = [a for a in row[1:5] if a]  # Ignorer les attaques vides
-                    
-                    success, message = self.ajouter_pokemon(nom_pokemon)
-                    if success:
-                        self.configurer_attaques(len(self.equipe) - 1, attaques)
-        
-            self.notify_observers('load_team', {
-                'file_path': self.fichier_equipe,
-                'old_team': ancienne_equipe,
-                'new_team': self.equipe
-            })
-        return True, f"Équipe chargée depuis {self.fichier_equipe}"
-            
+                self.notify_observers('load_team', {
+                    'file_path': self.fichier_equipe,
+                    'old_team': ancienne_equipe,
+                    'new_team': self.equipe
+                })
+                return True, f"Équipe chargée depuis {self.fichier_equipe}"
+                
         except Exception as e:
             self.equipe = ancienne_equipe  # Restaurer l'ancienne équipe en cas d'erreur
             return False, f"Erreur lors du chargement de l'équipe : {str(e)}"

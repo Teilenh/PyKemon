@@ -165,7 +165,6 @@ ATTAQUES = {
     "Fatal-Foudre": Attaque("Fatal-Foudre", "Électrique", 120, "special", 70),
     "Cage-Éclair": Attaque("Cage-Éclair", "Électrique", 0, "special"),
     "Onde de Choc": Attaque("Onde de Choc", "Électrique", 60, "special"),
-    "Électrik": Attaque("Électrik", "Électrique", 40, "special"),
     "Électroball": Attaque("Électroball", "Électrique", 80, "special", 100),
     
     # Attaques Feu
@@ -375,12 +374,12 @@ POKEMONS_DISPONIBLES = {
     },
     "Pikachu": {
         "base": Pokemon("Pikachu", "Électrique", 35, 55, 40, 50, 90,
-                     ["Éclair", "Tonnerre", "Fatal-Foudre", "Cage-Éclair", "Onde de Choc", "Électrik"]),
+                     ["Éclair", "Tonnerre", "Fatal-Foudre", "Cage-Éclair", "Onde de Choc"]),
         "niveau": 50
     },
     "Raichu": {
         "base": Pokemon("Raichu", "Électrique", 60, 90, 55, 90, 110,
-                     ["Éclair", "Tonnerre", "Fatal-Foudre", "Cage-Éclair", "Onde de Choc", "Électrik", "Électroball"]),
+                     ["Éclair", "Tonnerre", "Fatal-Foudre", "Cage-Éclair", "Onde de Choc", "Électroball"]),
         "niveau": 50
     },
     "Sabelette": {
