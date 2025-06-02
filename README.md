@@ -1,4 +1,54 @@
 # PyKemon
-Pokemon battle but in python, 
+projet pour apprendre python OO
+Un jeu Pokémon en Python avec interface graphique PyQt6.
 
-for now, it's véry simplified system, and I like the fisrt génération battle so I use these mecanique like the "Special" stat, no talent, and less monster than now ( because I don't want include all mon too XD, I don't won't spend long time only for adding pokémon, but, why not later add some Pokemon)
+## Fonctionnalités
+
+- Team Builder pour créer et gérer votre équipe de Pokémon
+- Système de combat tour par tour
+- Interface graphique moderne avec PyQt6
+- Gestion des sprites et animations
+- Système de types et de dégâts fidèle à la première génération
+
+## Installation
+
+1. Clonez le dépôt :
+```bash
+git clone https://github.com/Teilenh/PyKemon.git
+cd PyKemon
+```
+
+2. Installez les dépendances :
+```bash
+pip install PyQt6
+```
+
+3. Lancez le jeu :
+```bash
+python main.py
+```
+
+## Structure du projet
+
+```
+src/
+├── core/           # Logique métier
+│   ├── pokemon.py      # Gestion des Pokémon et attaques
+│   ├── combat.py       # Système de combat
+│   ├── team_builder.py # Gestion des équipes
+│   └── adversaire.py   # IA de l'adversaire
+├── gui/            # Interface graphique
+│   ├── components/     # Composants réutilisables
+│   ├── combat.py      # Interface de combat
+│   └── team_builder_GUI.py  # Interface du Team Builder
+└── assets/         # Ressources (sprites, etc.)
+    └── sprites/        # Images des Pokémon
+```
+
+## Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.

@@ -1,4 +1,4 @@
-from PKMtypes import get_multiplicateur
+from .pokemon import get_multiplicateur
 
 def calcul_degats(attacker, defender, attaque):
     niveau = 50

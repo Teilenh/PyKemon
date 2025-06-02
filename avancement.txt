@@ -1,0 +1,130 @@
+=== PyKemon - Journal d'avancement ===
+
+1. PROBLÈMES RENCONTRÉS ET SOLUTIONS
+-----------------------------------
+
+a) Gestion des Sprites
+   - Problème : Sprites non visibles en combat
+   - Solution : Implémentation d'un système de téléchargement automatique
+   - Fix : Création de sprite_downloader.py avec gestion des erreurs et fallback
+
+b) Interface Graphique
+   - Problème : Message box superflu lors de l'ajout de Pokémon dans le team builder
+   - Solution : Remplacement par une notification discrète dans l'interface
+   - Fix : Utilisation de QStatusBar pour les notifications temporaires
+
+   - Problème : Duplication des boutons en fin de combat dans l'interface Tkinter
+   - Solution : Refactorisation de la gestion des widgets et nettoyage systématique
+   - Fix : Implémentation d'une méthode clear_combat_ui() appelée en fin de combat
+
+c) Performance
+   - Problème : Lag lors du chargement des sprites
+   - Solution : Mise en cache des sprites téléchargés
+   - Fix : Système de cache local dans assets/sprites/
+
+d) Stats Pokémon
+   - Problème : Statistiques incorrectes pour certains Pokémon
+   - Solution : Vérification et correction avec les données officielles via le site web français "coup critique" par redemption
+   - Fix : Mise à jour de la "base de données" dans pokemon.py
+
+e) Système de Combat
+   - Problème : Pokémon restant jouable après KO
+   - Solution : Vérification systématique de l'état des Pokémon après chaque action
+   - Fix : Ajout de contrôles dans la classe Combat
+
+2. FONCTIONNALITÉS AJOUTÉES
+--------------------------
+
+a) Système de Combat Amélioré
+   - Calcul des dégâts selon la 1ère génération
+   - Système de tour par tour avec gestion de la vitesse
+   - Système de changement de Pokémon
+
+b) Interface Graphique Moderne
+   - Support de deux interfaces graphiques (PyQt et Tkinter)
+   - Thème clair/sombre avec switch fonctionnel pour toute les fenetre 
+   - Animations de combat
+   - Affichage des sprites de face/dos
+   - Barre de vie animée
+   - Sons et effets visuels
+   - sous linux intégration tu théme gtk/QT du systéme ( en conservant le théme sombre/light via le switch)
+
+c) Gestion d'Équipe
+   - Système de sauvegarde/chargement d'équipe
+   - Interface de construction d'équipe
+   - Vérification de la validité des équipes
+
+3. FONCTIONNALITÉS PRÉVUES
+-------------------------
+
+a) Combat
+   - Ajout des objets tenus
+   - Système de conditions météo
+   - Statistiques de combat (historique)
+   - Mode tournoi
+
+b) Interface
+   - Raccourcis clavier
+   - Mode plein écran optimisé
+   - Animations supplémentaires
+
+c) Contenu
+   - Plus de Pokémon (jusqu'à la 1ère gen complète)
+   - Attaques spéciales signature
+   - Système d'évolution
+   - Mode histoire simple
+
+4. AMÉLIORATIONS TECHNIQUES
+--------------------------
+
+a) Performance
+   - Mise en cache intelligente
+   - Chargement asynchrone des ressources
+   - Optimisation des animations
+
+b) Code
+   - Tests unitaires complets
+   - Documentation détaillée
+   - Logging pour debug
+   - Gestion des erreurs améliorée
+
+c) Architecture
+   - Pattern MVC strict
+   - Système de plugins
+   - Configuration externalisée
+   - API pour extensions
+
+5. IDÉES FUTURES
+---------------
+
+a) Gameplay
+   - Mode "Nuzlocke" intégré
+   - Défis personnalisés
+   - Statistiques détaillées
+   - Achievements
+
+b) Social
+   - Partage d'équipes (export/import)
+   - Classement local
+   - Replay de combats
+   - Création de tournois
+
+c) Technique
+   - Base de données SQLite
+   - Sauvegarde cloud
+   - Mises à jour automatiques
+   - Mode hors-ligne complet
+
+6. NOTES DE DÉVELOPPEMENT
+------------------------
+
+- Priorité à la stabilité du core
+- Interface utilisateur intuitive
+- Respect des mécaniques de la 1ère génération
+- Code modulaire et extensible
+- Documentation en français
+- Tests réguliers des fonctionnalités
+A faire :   - Ajout des attaques status (Poudre Dodo, etc.) mais encore non fonctionnelle
+            - Implémentation des effets de statut (paralysie, sommeil)
+            - Système de précision et d'esquive
+            - Gestion des PP des attaques

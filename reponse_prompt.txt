@@ -1,0 +1,120 @@
+# Projet PyKemon - Résumé
+
+## Description Générale
+PyKemon est un jeu de combat de Pokémon en tour par tour, inspiré de la première génération. Le jeu propose deux interfaces graphiques (PyQt6 et Tkinter) et permet aux joueurs de créer leur équipe et d'affronter des adversaires contrôlés par l'ordinateur.
+
+## Structure du Projet
+```
+PyKemon/
+├── src/
+│   ├── core/           # Logique métier
+│   │   ├── pokemon.py
+│   │   ├── combat.py
+│   │   ├── team_builder.py
+│   │   ├── adversaire.py
+│   │   └── dresseur.py
+│   └── gui/           # Interfaces graphiques
+│       └── gui.py     # Interface PyQt6
+├── gui_tkinter.py     # Interface Tkinter
+├── assets/           # Ressources (images, données)
+└── tests/           # Tests unitaires
+```
+
+## Description des Fichiers Core
+
+### pokemon.py
+- Contient la table des types (efficacités/faiblesses)
+- Définit les classes Attaque et Pokemon
+- Gère les statistiques des Pokémon (PV, attaque, défense, etc.)
+- Contient le catalogue des Pokémon disponibles et leurs attaques
+- Gère l'apprentissage et l'oubli des attaques
+
+### combat.py
+- Gère la mécanique de combat
+- Calcule les dégâts selon les types et statistiques
+- Implémente la formule de dégâts de la 1ère génération
+
+### team_builder.py
+- Permet de créer et gérer une équipe de Pokémon
+- Sauvegarde/charge les équipes dans un fichier CSV
+- Limite à 6 Pokémon par équipe
+- Gère la configuration des attaques
+
+### adversaire.py
+- Gère l'IA de l'adversaire
+- Crée des équipes aléatoires
+- Gère le changement de Pokémon
+- Choisit les attaques aléatoirement
+
+### dresseur.py
+- Représente un dresseur Pokémon
+- Gère l'équipe du dresseur
+- Vérifie l'état de l'équipe (K.O.)
+
+## Interfaces Graphiques
+
+### gui.py (PyQt6)
+- Interface moderne et responsive
+- Affiche les informations des Pokémon
+- Gère les animations de combat
+- Historique des 3 derniers messages
+- Barre de vie animée
+
+### gui_tkinter.py
+- Version alternative plus légère
+- Mêmes fonctionnalités que la version PyQt6
+- Interface plus simple mais compatible partout
+- Pas d'animations complexes
+
+####################
+### Chose a revoir
+####################
+table des type, stat des poké, stat des attaques, 
+systéme d'attaque, vérifier qu'il marche comme prévu, pas de soucis, 
+systéme de sauvegarde des équipe, 
+IA ( actuellement aléatoire, mais compte pas faire mieux)
+
+#########################
+## Pistes d'Amélioration
+#########################
+
+### Gameplay
+1. Ajouter des effets de statut (paralysie, poison, etc.)
+4. Intégrer plus de Pokémon et d'attaques --- prévu, 150 pokémon de la premiére génération
+
+### Interface
+1. Ajouter des sprites/images pour les Pokémon ----- prévu, stocké dans Assets/data/Sprites
+2. Améliorer les animations de combat ---- je pensais sprite fixe, mais a voir pour l'interface moderne
+3. Ajouter des effets sonores
+4. Créer un mode plein écran 
+5. Ajouter des thèmes visuels ( zone de combat ?)
+
+### Technique
+1. Ajouter des tests unitaires
+2. Implémenter le multijoueur en réseau -------- GROS BOF, sa peux se faire mais trés dur a géré
+3. Ajouter une base de données pour les sauvegardes
+4. Optimiser les performances
+5. Ajouter un système de logging ?
+
+### Contenu
+2. Créer des dresseurs avec des stratégies différentes
+4. Ajouter des zones de combat différentes ( arriére plan qui change, pourrait jouer effet météo ?)
+
+### IA
+1. Améliorer l'IA des adversaires
+2. Ajouter différents niveaux de difficulté
+3. Implémenter des stratégies de combat
+4. Créer des personnalités pour les dresseurs
+5. Ajouter un apprentissage automatique pour l'IA --- bof mais si simple pourquoi pas
+
+### modes de jeu 
+1. mode rogue lite, ou style aventure : 
+    a. Implémenter les niveaux et l'expérience
+    b. Ajouter les évolutions des Pokémon
+    c. Ajouter des objets (potions, etc.)
+    d. Ajouter différents niveaux de difficulté
+1.5 Implémenter un système de badges ( a voir)
+2. Ajouter un mode histoire ( vas de pair avec badge donc )
+
+3. un système de tournoi ( JcE toujours, possible JcJ local "chaise tournante")
+
