@@ -6,8 +6,8 @@ Un jeu Pokémon en Python avec interface graphique PyQt6.
 
 - Team Builder pour créer et gérer votre équipe de Pokémon
 - Système de combat tour par tour
-- Interface graphique moderne avec PyQt6
-- Gestion des sprites et animations
+- Interface graphique moderne avec PyQt6 et Tk
+- affichage d'images
 - Système de types et de dégâts fidèle à la première génération
 
 ## Installation
