@@ -5,11 +5,11 @@ def calcul_degats(attacker, defender, attaque):
 
     # Choix des statistiques selon la catégorie d'attaque
     if attaque.categorie == "physique":
-        stat_attaquant = attacker.attaque
-        stat_defenseur = defender.defense
+        stat_attaquant = attacker.get_stat("attaque")
+        stat_defenseur = defender.get_stat("defense")
     elif attaque.categorie == "special":
-        stat_attaquant = attacker.special
-        stat_defenseur = defender.special
+        stat_attaquant = attacker.get_stat("special")
+        stat_defenseur = defender.get_stat("special")
     else:
         raise ValueError("Catégorie d'attaque inconnue")
     multiplicateur_type = get_multiplicateur(attaque.type, defender.type)
